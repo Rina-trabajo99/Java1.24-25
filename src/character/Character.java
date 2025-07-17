@@ -1,6 +1,8 @@
 package character;
 
-import characterSpec.CharacterName;
+import java.util.Scanner;
+
+import characterSpec.CharacterPower;
 
 public class Character {
 
@@ -30,8 +32,18 @@ public class Character {
 		 
 		 */
 		
-		CharacterName cn = new CharacterName("名前");
-		cn.display();
+		//名前をコンソールから入力させる
+		System.out.print("名前を入力してください：");
+		Scanner sc = new Scanner(System.in);
+		String userName = sc.next();
+		
+		//インスタンス
+		CharacterPower cp = new CharacterPower();
+				
+		cp.setName(userName); //受け取った名前をsetterに設定する
+		cp.display(); //CharacterPowerのdisplayを実行する
+		
+		
 	}
 
 }
